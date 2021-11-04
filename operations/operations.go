@@ -60,3 +60,24 @@ func Start_subtraction_operation(reader bufio.Reader) {
 	fmt.Println(fmt.Sprintf("Difference: %v", difference))
 	fmt.Scanln()
 }
+
+func multiply_numbers(numbers []int64) int64 {
+	var product int64 = 0
+	for index, num := range numbers {
+		if index == 0 {
+			product = num
+		} else {
+			product = product * num
+		}
+	}
+	return product
+}
+
+func Start_multiplication_operation(reader bufio.Reader) {
+	fmt.Println("Please type all of the numbers you wish to multiply, separated by a comma below.")
+	nums_to_multiply_input, _ := reader.ReadString('\n')
+	nums_to_multiply := parse_number_inputs(nums_to_multiply_input)
+	product := multiply_numbers(nums_to_multiply)
+	fmt.Println(fmt.Sprintf("Product: %v", product))
+	fmt.Scanln()
+}
