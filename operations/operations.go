@@ -81,3 +81,27 @@ func Start_multiplication_operation(reader bufio.Reader) {
 	fmt.Println(fmt.Sprintf("Product: %v", product))
 	fmt.Scanln()
 }
+
+func divide_numbers(numbers []int64) int64 {
+	var quotient int64 = 0
+	for index, num := range numbers {
+		if index == 0 {
+			quotient = num
+		} else if num == 0 {
+			fmt.Println("Error: cannot divide by 0")
+			return 0
+		} else {
+			quotient = quotient / num
+		}
+	}
+	return quotient
+}
+
+func Start_division_operation(reader bufio.Reader) {
+	fmt.Println("Please type all of the numbers you wish to divide in order, separated by a comma below.")
+	nums_to_divide_input, _ := reader.ReadString('\n')
+	nums_to_divide := parse_number_inputs(nums_to_divide_input)
+	quotient := divide_numbers(nums_to_divide)
+	fmt.Println(fmt.Sprintf("Quotient: %v", quotient))
+	fmt.Scanln()
+}

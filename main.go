@@ -27,7 +27,7 @@ func main() {
 		case "3":
 			operations.Start_multiplication_operation(*reader)
 		case "4":
-			fmt.Println(fmt.Sprintf("You selected %v", trimmed_op_selection))
+			operations.Start_division_operation(*reader)
 		case "exit":
 			fmt.Println(fmt.Sprintf("You selected %v", trimmed_op_selection))
 		default:
